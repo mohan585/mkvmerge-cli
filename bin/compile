@@ -20,9 +20,9 @@ cd mkvcli
 wget -q $DOWNLOAD_URL
 unzip -qq $FILE.zip
 mv $FILE/bin .
-chmod +x /bin/mkvmerge
+chmod +x vendor/mkvcli/bin/mkvmerge
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/mkvmerge.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:${HOME}/vendor1/mkvcli/bin"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:${HOME}/vendor/mkvcli/bin"' >> $PROFILE_PATH
