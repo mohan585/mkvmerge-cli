@@ -5,8 +5,8 @@ indent() {
 }
 
 echo "-----> Install mkvmerge"
-BUILD_DIR=$2
-VENDOR_DIR="vendor1"
+BUILD_DIR=$1
+VENDOR_DIR="vendor"
 FILE="mkvmerge-0.7.1"
 DOWNLOAD_URL="https://raw.githubusercontent.com/mohan585/mkvmerge-cli/master/$FILE.zip"
 
@@ -20,6 +20,7 @@ cd mkvcli
 wget -q $DOWNLOAD_URL
 unzip -qq $FILE.zip
 mv $FILE/bin .
+chmod +x /bin/mkvmerge
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/mkvmerge.sh"
